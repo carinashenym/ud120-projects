@@ -59,9 +59,11 @@ from sklearn.cross_validation import train_test_split
 features_train, features_test, labels_train, labels_test = \
     train_test_split(features, labels, test_size=0.3, random_state=42)
 clfNB.fit(features_test,labels_train)
-pred=clfNB.predict(features_test)
+predNB=clfNB.predict(features_test)
+print NB_score = accuracy_score(predNB,labels_test)
 clfSV.fit(features_train,labels_train)
-pred=clfSV.predict(features_test)
+predSV=clfSV.predict(features_test)
+print SV_score = accuracy_score(predSV,labels_test)
 
 ### Task 6: Dump your classifier, dataset, and features_list so anyone can
 ### check your results. You do not need to change anything below, but make sure
